@@ -13,16 +13,6 @@ export const TopContainer = () => {
       )}
     >
       <div className={cn("flex flex-col", "lg:max-w-[442px]")}>
-        <Image
-          src="/TopContainerImage.png"
-          alt="Top Container Image"
-          width={306}
-          height={261}
-          className={cn(
-            "mx-auto transition-transform duration-300 hover:scale-105",
-            "lg:w-[528px] lg:h-[450px] lg:mx-0"
-          )}
-        />
         <h2
           className={cn(
             "font-extrabold text-[64px] text-[#CAB167] leading-14 mb-4",
@@ -42,7 +32,10 @@ export const TopContainer = () => {
         alt="Top Container Image"
         width={306}
         height={261}
-        className={cn("mx-auto", "lg:w-[528px] lg:h-[450px] lg:mx-0")}
+        className={cn(
+          "mx-auto transition-transform duration-300 hover:scale-105",
+          "lg:w-[528px] lg:h-[450px] lg:mx-0"
+        )}
       />
     </section>
   );
