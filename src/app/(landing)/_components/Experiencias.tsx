@@ -48,7 +48,7 @@ export const Experiencias = () => {
   const opts: YouTubeProps["opts"] = {
     width: "100%",
     height: "100%",
-    playerVars: { autoplay: 0, controls: 1 },
+    playerVars: { autoplay: isPlaying ? 1 : 0, controls: 1 },
   };
 
   const thumbs = [
@@ -121,15 +121,17 @@ export const Experiencias = () => {
                 fill
                 className="object-cover"
               />
-              <div className="relative z-10 flex items-center justify-center w-[69px] h-[69px] bg-[#B9B9B9] rounded-full pl-1">
-                <Image src="/play.png" alt="Play" width={36} height={36} />
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="z-10 flex items-center justify-center w-[69px] h-[69px] bg-[#B9B9B9] rounded-full pl-1 transition-transform group-hover:scale-110 shadow-lg">
+                  <Image src="/play.png" alt="Play" width={36} height={36} />
+                </div>
               </div>
             </button>
           ) : (
             <YouTube
               videoId="IFYy7MZZ0A4"
               opts={opts}
-              className="aspect-video"
+              className="aspect-video lg:w-[620px] lg:h-[384px] mx-auto"
             />
           )}
         </div>
