@@ -83,8 +83,9 @@ export const Sobre = () => {
             <div
               key={i}
               className={cn(
-                "grid grid-cols-[50%_25%_25%] px-4 py-3 text-white/90 text-sm",
-                i % 2 !== 0 ? "bg-transparent" : "bg-[#FFFFFF0D]"
+                "grid grid-cols-[50%_25%_25%] px-4 py-3 text-white/90 text-sm transition-colors duration-200",
+                i % 2 !== 0 ? "bg-transparent" : "bg-[#FFFFFF0D]",
+                "hover:bg-white/10"
               )}
             >
               <span>{beneficio}</span>
@@ -112,7 +113,7 @@ export const Sobre = () => {
           <Accordion type="single" collapsible className="w-full border-none">
             {faqs.map((faq, i) => (
               <AccordionItem key={i} value={`faq-${i}`}>
-                <AccordionTrigger className={cn("text-white text-left ")}>
+                <AccordionTrigger className="text-white text-left transition-colors duration-200 hover:text-[#CAB167]">
                   {faq.question}
                 </AccordionTrigger>
                 <AccordionContent className={cn("text-white/80 pb-4 ")}>

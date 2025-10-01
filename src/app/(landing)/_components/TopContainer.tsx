@@ -14,11 +14,14 @@ export const TopContainer = () => {
     >
       <div className={cn("flex flex-col", "lg:max-w-[442px]")}>
         <Image
-          src="/Logo.png"
+          src="/TopContainerImage.png"
           alt="Top Container Image"
-          height={14}
-          width={134}
-          className={cn("hidden mb-6", "lg:block")}
+          width={306}
+          height={261}
+          className={cn(
+            "mx-auto transition-transform duration-300 hover:scale-105",
+            "lg:w-[528px] lg:h-[450px] lg:mx-0"
+          )}
         />
         <h2
           className={cn(

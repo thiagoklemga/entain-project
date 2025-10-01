@@ -1,4 +1,4 @@
-/* Layout em mosaico corrigido com colunas de alturas diferentes */
+"use client";
 
 import React from "react";
 import { cn } from "@/lib/utils";
@@ -84,7 +84,10 @@ const items = [
 
 export const Beneficios = () => {
   return (
-    <section className="w-full px-4 py-16 flex flex-col items-center justify-center text-center">
+    <section
+      id="beneficios"
+      className="w-full px-4 py-16 flex flex-col items-center justify-center text-center"
+    >
       <h3 className="text-[32px] font-extrabold uppercase mb-3 text-[#CAB167]">
         Benefícios Sportingbet One
       </h3>
@@ -158,7 +161,8 @@ const BenefitCard = ({
     <div
       className={cn(
         "flex items-start gap-4 p-4 w-full h-full",
-        "rounded-[8px] border border-[#EAEBEC0D] bg-[#FFFFFF0D]",
+        "rounded-[8px] border border-[#EAEBEC0D] bg-[#FFFFFF0D] transition-transform duration-300",
+        "hover:scale-[1.02] hover:bg-[#FFFFFF14]",
         "lg:flex-col lg:items-center lg:text-center lg:py-14"
       )}
     >
@@ -175,11 +179,11 @@ const BenefitCard = ({
         {buttonLabel && (
           <button
             className={cn(
-              "mt-5 self-start w-full h-11 rounded-[8px]",
+              "mt-5 self-start w-full h-11 rounded-[8px] transition-all duration-300",
               "border text-white font-bold text-sm",
               type === "primary"
-                ? "bg-[#CAB167] border-[#CAB167] text-[#002041]"
-                : "border-white"
+                ? "bg-[#CAB167] border-[#CAB167] text-[#002041] hover:bg-[#d8c37e]"
+                : "border-white hover:bg-white/10"
             )}
           >
             {buttonLabel}

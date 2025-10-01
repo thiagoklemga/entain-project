@@ -13,8 +13,8 @@ export const MeuGerente = () => {
       <div
         className={cn(
           "w-full flex flex-col max-w-4xl rounded-lg p-6 relative overflow-hidden",
-          "bg-[linear-gradient(180deg,#002041_0%,#000E1C_100%)]",
-          "border border-white/10 shadow-md",
+          "bg-[linear-gradient(180deg,#002041_0%,#000E1C_100%)] border border-white/10 shadow-md",
+          "transition-transform duration-300 hover:scale-[1.01]",
           "lg:flex-row lg:gap-10"
         )}
       >

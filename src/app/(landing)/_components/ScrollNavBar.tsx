@@ -68,12 +68,16 @@ export function ScrollNavBar() {
                 aria-label={label}
                 aria-current={isActive ? "true" : undefined}
                 className={cn(
-                  "flex items-center p-[14px] rounded-full transition-all",
-                  "text-white hover:bg-white/10",
-                  isActive && "lg:ring-1 lg:bg-white/10"
+                  "flex items-center px-4 py-2 rounded-full transition-all duration-300",
+                  "text-white/80 hover:text-white hover:bg-white/10",
+                  isActive && "bg-white/10"
                 )}
               >
-                <Icon width={16} height={16} />
+                <Icon
+                  width={16}
+                  height={16}
+                  className="transition-transform group-hover:scale-110"
+                />
                 <span
                   className={cn(
                     "text-sm font-medium tracking-wide overflow-hidden whitespace-nowrap transition-all duration-200",

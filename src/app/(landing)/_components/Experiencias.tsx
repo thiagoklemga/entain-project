@@ -11,7 +11,6 @@ import {
   CarouselItem,
 } from "@/components/ui/carousel";
 
-// Hook simples para escalar valores baseado em largura de Figma (1440px)
 const useScaleFactor = (baseWidth = 1440) => {
   const [scale, setScale] = useState(1);
 
@@ -29,7 +28,6 @@ const useScaleFactor = (baseWidth = 1440) => {
   return scale;
 };
 
-// Função pura segura para aplicar escala e evitar overflow
 const getSafeScaledPosition = (x: number, y: number, scale: number) => {
   if (typeof window === "undefined") return [x, y];
 

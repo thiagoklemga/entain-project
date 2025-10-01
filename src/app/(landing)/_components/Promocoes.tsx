@@ -39,8 +39,8 @@ export const Promocoes = () => {
 
         <button
           className={cn(
-            "px-4 h-11 rounded-md font-semibold text-sm",
-            "text-white border border-white"
+            "px-6 h-11 rounded-md font-semibold text-sm border text-white border-white transition-all duration-300",
+            "hover:bg-white/10 hover:scale-105"
           )}
         >
           Ver Promoções ONE
