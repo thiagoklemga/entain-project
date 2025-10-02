@@ -20,7 +20,7 @@ export default function Home() {
     >
       <div
         className={cn(
-          "absolute inset-0 hidden lg:block",
+          "absolute inset-0 hidden top-[56px] lg:block",
           "bg-[url('/BG.png')] bg-no-repeat bg-cover bg-center"
         )}
       />
