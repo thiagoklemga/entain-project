@@ -115,7 +115,7 @@
 @layer base {
   @font-face {
     font-family: "Sportingbet";
-    src: url("../../public/fonts/Sportingbet.ttf") format("truetype");
+    src: url("/fonts/Sportingbet.ttf") format("truetype");
     font-display: swap;
   }
 
