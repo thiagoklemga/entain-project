@@ -8,7 +8,6 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { Check, Minus, MessageCircle } from "lucide-react";
 
 export const Sobre = () => {
   const beneficios = [
@@ -30,7 +29,9 @@ export const Sobre = () => {
   return (
     <section
       id="sobre"
-      className={cn("py-16 w-full flex flex-col items-center px-4")}
+      className={cn(
+        "pb-16 pt-[calc(180px+64px)] w-full flex flex-col items-center px-4"
+      )}
     >
       <h2
         className={cn(
@@ -64,18 +65,16 @@ export const Sobre = () => {
       >
         <div
           className={cn(
-            "grid grid-cols-[50%_25%_25%] px-4 py-3 text-sm font-bold uppercase text-white/80 bg-transparent"
+            "grid grid-cols-[50%_25%_25%] px-4 py-3 lg:py-5 text-sm font-bold uppercase text-white/80 bg-transparent"
           )}
         >
           <span></span>
-          <Image
-            src="/sb.png"
+          <img
+            src="/App Icon Logo.png"
             alt="Sportingbet Logo"
-            width={22}
-            height={22}
             className="mx-auto"
           />
-          <span className="text-center text-[#CAB167]">ONE</span>
+          <img src="/Logo One.png" alt="Sportingbet Logo" className="mx-auto" />
         </div>
 
         <div>
@@ -90,10 +89,15 @@ export const Sobre = () => {
             >
               <span>{beneficio}</span>
               <span className="flex justify-center items-center">
-                <Minus className={cn("w-5 h-5 text-white/50")} />
+                <Image
+                  src="/Cancelled.png"
+                  alt="Cancelled"
+                  width={24}
+                  height={24}
+                />
               </span>
               <span className="flex justify-center items-center">
-                <Check className={cn("w-5 h-5 text-[#22c55e]")} />
+                <Image src="/Win.png" alt="Win" width={24} height={24} />
               </span>
             </div>
           ))}
@@ -103,17 +107,25 @@ export const Sobre = () => {
       <div className={cn("py-16 w-full flex flex-col items-center mt-[180px]")}>
         <h2
           className={cn(
-            "text-[32px] font-extrabold uppercase text-[#CAB167] mb-6 text-center"
+            "text-[32px] font-extrabold uppercase text-[#CAB167] leading-[64px] text-center"
           )}
         >
           Perguntas Frequentes
         </h2>
 
         <div className={cn("w-full max-w-3xl rounded-lg overflow-hidden ")}>
-          <Accordion type="single" collapsible className="w-full border-none">
+          <Accordion
+            type="single"
+            collapsible
+            className="w-full border-none text-sm"
+          >
             {faqs.map((faq, i) => (
-              <AccordionItem key={i} value={`faq-${i}`}>
-                <AccordionTrigger className="text-white text-left transition-colors duration-200 hover:text-[#CAB167]">
+              <AccordionItem
+                key={i}
+                value={`faq-${i}`}
+                className={cn("border-b border-[#BEC2C6]")}
+              >
+                <AccordionTrigger className="text-white text-left transition-colors lg:pb-10 lg:pt-9 py-5 duration-200 hover:text-[#CAB167] ">
                   {faq.question}
                 </AccordionTrigger>
                 <AccordionContent className={cn("text-white/80 pb-4 ")}>
@@ -126,11 +138,16 @@ export const Sobre = () => {
 
         <div
           className={cn(
-            "mt-8 w-full max-w-3xl rounded-lg flex flex-col gap-4 items-start"
+            "w-full max-w-3xl rounded-lg flex flex-col gap-4 items-start"
           )}
         >
           <div className={cn("flex items-center gap-2")}>
-            <MessageCircle className={cn("w-5 h-5 text-[#CAB167]")} />
+            <Image
+              src="/How to play.png"
+              alt="Cancelled"
+              width={24}
+              height={24}
+            />{" "}
             <h3 className={cn("text-[#CAB167] font-bold")}>
               Ainda tem dúvidas?
             </h3>

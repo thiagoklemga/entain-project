@@ -14,17 +14,26 @@ export default function Home() {
   return (
     <main
       className={cn(
-        "flex min-h-screen flex-col items-center text-white",
-        "bg-[linear-gradient(180deg,#000E1C_0.96%,#002041_4.08%)]"
+        "relative flex min-h-screen flex-col items-center text-white",
+        "bg-[linear-gradient(180deg,#000E1C_0.94%,#002041_5.49%)]"
       )}
     >
-      <TopContainer />
-      <ScrollNavBar />
-      <Experiencias />
-      <Beneficios />
-      <Promocoes />
-      <MeuGerente />
-      <Sobre />
+      <div
+        className={cn(
+          "absolute inset-0 hidden lg:block",
+          "bg-[url('/BG.png')]"
+        )}
+      />
+
+      <div className="relative z-10 w-full">
+        <TopContainer />
+        <ScrollNavBar />
+        <Experiencias />
+        <Beneficios />
+        <Promocoes />
+        <MeuGerente />
+        <Sobre />
+      </div>
     </main>
   );
 }

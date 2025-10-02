@@ -9,13 +9,20 @@ export const TopContainer = () => {
     <section
       className={cn(
         "flex flex-col gap-[28px] w-full max-w-5xl pl-[17px] pr-[15px] pt-11",
-        "lg:flex-row lg:pt-20 lg:gap-0 lg:justify-between lg:items-center lg:pl-0 lg:pr-0"
+        "lg:flex-row lg:pt-14 lg:gap-[104px] lg:mx-auto lg:items-end lg:pl-0 lg:pr-0"
       )}
     >
       <div className={cn("flex flex-col", "lg:max-w-[442px]")}>
+        <Image
+          src={"/Logo.png"}
+          alt="Sportingbet Logo"
+          width={150}
+          height={50}
+          className={cn("hidden mb-6", "lg:block")}
+        />
         <h2
           className={cn(
-            "font-extrabold text-[64px] text-[#CAB167] leading-14 mb-4",
+            "font-extrabold text-[64px] text-[#CAB167] leading-14 mb-4 font-sportingbet",
             "lg:text-[64px] lg:leading-[72px]"
           )}
         >

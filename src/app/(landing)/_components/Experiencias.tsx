@@ -79,13 +79,15 @@ export const Experiencias = () => {
     <section
       ref={sectionRef}
       className={cn(
-        "w-full py-32 flex flex-col items-center justify-center px-2 relative overflow-hidden"
+        "w-full pt-20 pb-0 lg:pb-36 flex flex-col items-center justify-center relative overflow-hidden px-2"
       )}
     >
-      <h3 className={cn("text-[32px] font-extrabold text-[#CAB167] uppercase")}>
+      <h2 className={cn("text-[32px] font-extrabold text-[#CAB167] uppercase")}>
         Experiências One
-      </h3>
-      <p className={cn("text-white/80 mb-10")}>Veja tudo que rolou até agora</p>
+      </h2>
+      <p className={cn("text-white/80 text-sm mb-6")}>
+        Veja tudo que rolou até agora
+      </p>
 
       <div className="relative w-full max-w-6xl flex items-center justify-center">
         <div className="hidden lg:flex flex-col gap-8 absolute left-0">
@@ -108,12 +110,12 @@ export const Experiencias = () => {
           })}
         </div>
 
-        <div className="relative w-full max-w-3xl aspect-video rounded-[8px] overflow-hidden z-10">
+        <div className="relative z-10 w-full max-w-[620px] mx-auto lg:mb-0">
           {!isPlaying ? (
             <button
               onClick={() => setIsPlaying(true)}
               aria-label="Play video"
-              className="w-full h-full relative flex items-center justify-center group lg:w-[620px] lg:h-[384px] mx-auto"
+              className="w-full aspect-video relative flex items-center justify-center group cursor-pointer"
             >
               <Image
                 src="https://img.youtube.com/vi/IFYy7MZZ0A4/hqdefault.jpg"
@@ -131,7 +133,7 @@ export const Experiencias = () => {
             <YouTube
               videoId="IFYy7MZZ0A4"
               opts={opts}
-              className="aspect-video lg:w-[620px] lg:h-[384px] mx-auto"
+              className="w-full aspect-video"
             />
           )}
         </div>
@@ -157,15 +159,15 @@ export const Experiencias = () => {
         </div>
       </div>
 
-      <div className="lg:hidden w-full mt-6">
+      <div className="lg:hidden w-full mt-2 lg:mt-6">
         <Carousel className="w-full">
           <CarouselContent className="-ml-[10px] flex gap-2">
             {thumbs.map((src, index) => (
               <CarouselItem
                 key={src}
-                className="basis-[160px] shrink-0 grow-0 pl-[10px]"
+                className="basis-[108px] lg:basis-[160px] shrink-0 grow-0 pl-[10px]"
               >
-                <div className="relative w-[160px] h-[160px] rounded-[8px] overflow-hidden">
+                <div className="relative w-[108px] h-[108px] lg:w-[160px] lg:h-[160px] rounded-[8px] overflow-hidden">
                   <Image
                     src={src}
                     alt={`Experiência ${index + 1}`}

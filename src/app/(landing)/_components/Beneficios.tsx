@@ -4,7 +4,6 @@ import React from "react";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
-import { Bookmark } from "lucide-react";
 import {
   Accordion,
   AccordionContent,
@@ -67,35 +66,48 @@ const benefits = [
 ];
 
 const items = [
-  "Atendimento dedicado e exclusivo",
-  "R$ 2.000 de bônus no mês do seu aniversário",
-  "Cashback semanal",
-  "Acesso antecipado a jogos e promoções",
-  "Presentes exclusivos entregues na sua casa",
-  "Bônus mais altos e personalizados",
-  "Competições exclusivas ONE",
-  "Torneios privados de Cassino",
-  "Convites para eventos Sportingbet ONE",
-  "Camarote ONE no Maracanã",
-  "Ingressos para jogos do Palmeiras no Allianz Parque",
-  "Ingressos para Libertadores e Sul-Americana",
-  "Ingressos para jogos da NBA nos EUA",
+  { title: "Atendimento dedicado e exclusivo", image: "Support1" },
+  { title: "Bônus mais altos e personalizados", image: "Rewards" },
+  { title: "Camarote ONE no Maracanã", image: "VIP Cabin" },
+  { title: "R$ 2.000 de bônus no mês do seu aniversário", image: "Birthday" },
+  { title: "Competições exclusivas ONE", image: "Tournaments" },
+  {
+    title: "Ingressos para Libertadores e Sul-Americana",
+    image: "CONMEBOL",
+  },
+  { title: "Cashback semanal", image: "Processing Payment" },
+  { title: "Torneios privados de Cassino", image: "Roulette" },
+  {
+    title: "Ingressos para jogos do Palmeiras no Allianz Parque",
+    image: "Soccer",
+  },
+  { title: "Acesso antecipado a jogos e promoções", image: "Promotions" },
+  { title: "Convites para eventos Sportingbet ONE", image: "Top Events" },
+  {
+    title: "Ingressos para jogos da NBA nos Estados Unidos",
+    image: "Basketball",
+  },
+  { title: "Presentes exclusivos entregues na sua casa", image: "Test" },
 ];
 
 export const Beneficios = () => {
   return (
     <section
       id="beneficios"
-      className="w-full px-4 py-16 flex flex-col items-center justify-center text-center"
+      className="w-full px-4 pt-[187px] lg:pt-[calc(187px+32px)] flex flex-col items-center justify-center text-center"
     >
-      <h3 className="text-[32px] font-extrabold uppercase mb-3 text-[#CAB167]">
+      <h2 className="text-[32px] leading-[64px] font-extrabold uppercase text-[#CAB167]">
         Benefícios Sportingbet One
-      </h3>
+      </h2>
 
-      <p className="mb-8 max-w-[700px] text-white">
+      <p>
         <b>ONE</b> é sobre enxergar valor na experiência, não apenas no
-        resultado. Aqui, cada detalhe importa. Cada convite fala por si. Cada
-        benefício é <b>reconhecimento</b>.
+        resultado.{" "}
+      </p>
+      <p className="mb-6  ">
+        {" "}
+        Aqui, cada detalhe importa. Cada convite fala por si. Cada benefício é{" "}
+        <b>reconhecimento</b>.
       </p>
 
       <div className="hidden lg:grid grid-cols-3 gap-6 w-full max-w-[1200px] text-white">
@@ -126,7 +138,7 @@ export const Beneficios = () => {
         type="single"
         defaultValue="beneficios"
         collapsible
-        className="w-full mt-12 lg:max-w-5xl"
+        className="w-full mt-[68px] lg:max-w-5xl"
       >
         <AccordionItem value="beneficios">
           <AccordionTrigger className="text-sm font-bold text-center gap-2 justify-center text-white lg:pb-8">
@@ -137,9 +149,17 @@ export const Beneficios = () => {
               {items.map((item, index) => (
                 <li key={index} className="flex items-center gap-3 text-white">
                   <div className="flex items-center min-w-10 h-10 justify-center border border-[#CAB167] rounded-full">
-                    <Bookmark className="w-4 h-4 text-[#CAB167]" />
+                    <Image
+                      src={`/${item.image}.png`}
+                      alt={item.title}
+                      width={16}
+                      height={16}
+                      className="text-[#CAB167]"
+                    />
                   </div>
-                  <span className="text-sm font-bold text-start">{item}</span>
+                  <span className="text-sm font-bold text-start">
+                    {item.title}
+                  </span>
                 </li>
               ))}
             </ul>
@@ -163,7 +183,9 @@ const BenefitCard = ({
         "flex items-start gap-4 p-4 w-full h-full",
         "rounded-[8px] border border-[#EAEBEC0D] bg-[#FFFFFF0D] transition-transform duration-300",
         "hover:scale-[1.02] hover:bg-[#FFFFFF14]",
-        "lg:flex-col lg:items-center lg:text-center lg:py-14"
+        "lg:flex-col lg:items-center lg:text-center lg:justify-center",
+        (title === "Cashback semanal" || title === "Atendimento dedicado") &&
+          "lg:py-16"
       )}
     >
       {Icon && (
@@ -173,17 +195,18 @@ const BenefitCard = ({
           className="w-[58px] h-[58px] lg:w-[110px] lg:h-[110px]"
         />
       )}
-      <div className="flex flex-col gap-1 w-full text-left">
+      <div className="flex flex-col gap-1 w-full text-left lg:text-center">
         <h4 className="text-xl font-bold text-[#CAB167]">{title}</h4>
         <p>{description}</p>
         {buttonLabel && (
           <button
             className={cn(
-              "mt-5 self-start w-full h-11 rounded-[8px] transition-all duration-300",
+              "mt-5 self-start w-full h-11 rounded-[8px] px-4 transition-all duration-300 cursor-pointer",
               "border text-white font-bold text-sm",
               type === "primary"
                 ? "bg-[#CAB167] border-[#CAB167] text-[#002041] hover:bg-[#d8c37e]"
-                : "border-white hover:bg-white/10"
+                : "border-white hover:bg-white/10",
+              "lg:w-auto lg:mx-auto"
             )}
           >
             {buttonLabel}

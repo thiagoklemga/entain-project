@@ -2,19 +2,20 @@
 
 import * as React from "react";
 import { cn } from "@/lib/utils";
-import { Headphones, Gift, Trophy, Info } from "lucide-react";
+
+import Image from "next/image";
 
 type Item = {
   id: string;
   label: string;
-  icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  icon: string;
 };
 
 const items: Item[] = [
-  { id: "beneficios", label: "Benefícios ONE", icon: Trophy },
-  { id: "promocoes", label: "Promoções Exclusivas", icon: Gift },
-  { id: "suporte", label: "Meu Gerente", icon: Headphones },
-  { id: "sobre", label: "Sobre o Clube", icon: Info },
+  { id: "beneficios", label: "Benefícios ONE", icon: "Sports" },
+  { id: "promocoes", label: "Promoções Exclusivas", icon: "Offers" },
+  { id: "suporte", label: "Meu Gerente", icon: "Support" },
+  { id: "sobre", label: "Sobre o Clube", icon: "Info" },
 ];
 
 export function ScrollNavBar() {
@@ -50,12 +51,16 @@ export function ScrollNavBar() {
       ?.scrollIntoView({ behavior: "smooth", block: "start" });
 
   return (
-    <section className={cn("py-6 sticky top-4 z-50")}>
+    <section
+      className={cn(
+        "lg:mb-10 mt-10 lg:mt-20 sticky top-4 z-50 justify-self-center "
+      )}
+    >
       <div
         className={cn(
-          "mx-auto inline-flex items-center justify-center",
-          "rounded-[100px] border-2 bg-[#FFFFFF14] border-[#FFFFFF33] backdrop-blur",
-          "h-[60px] px-1"
+          "mx-auto inline-flex items-center ",
+          "rounded-full border bg-[#FFFFFF14] border-[#FFFFFF33]",
+          "h-14 p-2"
         )}
       >
         <nav className={cn("flex items-center gap-2")}>
@@ -68,19 +73,22 @@ export function ScrollNavBar() {
                 aria-label={label}
                 aria-current={isActive ? "true" : undefined}
                 className={cn(
-                  "flex items-center px-4 py-2 rounded-full transition-all duration-300",
+                  "flex items-center px-4 py-3 rounded-full transition-all duration-300 cursor-pointer",
                   "text-white/80 hover:text-white hover:bg-white/10",
                   isActive && "bg-white/10"
                 )}
               >
-                <Icon
+                <Image
+                  src={`/${Icon}.png`}
+                  alt={label}
                   width={16}
                   height={16}
                   className="transition-transform group-hover:scale-110"
                 />
+
                 <span
                   className={cn(
-                    "text-sm font-medium tracking-wide overflow-hidden whitespace-nowrap transition-all duration-200",
+                    "text-sm font-bold overflow-hidden whitespace-nowrap transition-all duration-200",
                     isActive ? "inline-block pl-2" : "hidden",
                     "lg:inline-block lg:pl-2"
                   )}
