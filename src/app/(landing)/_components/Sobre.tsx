@@ -65,16 +65,30 @@ export const Sobre = () => {
       >
         <div
           className={cn(
-            "grid grid-cols-[50%_25%_25%] px-4 py-3 lg:py-5 text-sm font-bold uppercase text-white/80 bg-transparent"
+            "grid grid-cols-[50%_25%_25%] px-4 py-3 lg:py-5 text-sm font-bold uppercase text-white/80 bg-transparent items-center"
           )}
         >
           <span></span>
           <img
+            src="/Logo (1).png"
+            alt="Sportingbet Logo"
+            className="block lg:hidden mx-auto"
+          />
+          <img
             src="/App Icon Logo.png"
             alt="Sportingbet Logo"
-            className="mx-auto"
+            className="hidden lg:block mx-auto"
           />
-          <img src="/Logo One.png" alt="Sportingbet Logo" className="mx-auto" />
+          <img
+            src="/Group 5.png"
+            alt="Sportingbet Logo"
+            className="block lg:hidden mx-auto"
+          />
+          <img
+            src="/Logo One.png"
+            alt="Sportingbet Logo"
+            className="hidden lg:block mx-auto"
+          />
         </div>
 
         <div>
